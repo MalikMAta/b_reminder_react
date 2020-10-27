@@ -1,58 +1,103 @@
 import React, { useState } from "react";
 import { birthdays } from "./DataB";
-import './app.css'
+import "./app.css";
 
 function DataBack() {
-    const [birth , setBirth] = useState(birthdays)
+  const [birth, setBirth] = useState(birthdays);
 
-    const dateT = new Date()
+  const dateT = new Date();
+
+  return (
+    <>
+
+
+    {birth.map((people) => {
+        const {name, day, month, age, image, key} = people
+
+
+        return (
+            <>
+
+        {dateT.getDate() === day && dateT.getMonth() === month ? 
+        
+        <article className="userDetails" key={key}> 
+        <div className="image" alt="" >
+         <img src={image}></img>
+        </div>
+
+        <div className="details">
+        <h1>{name}</h1>
+        <h2>{age}</h2>
+        </div>
+        
+       </article>
+        : ""}
     
-  
-return (
-<>
+            
+
+
+        </>
+        )
+
+    })}
 
 
 
-{
-
-birth.map((people) => {
-
-    const {name, day, month, age, image} = people
 
 
 
-return <article className="names">
+      {/* {birth.map((people) => {
+        const { name, day, month, age, image } = people;
 
-<h2>
-{  dateT.getDate() === day && dateT.getMonth() === month  ? 
+        return (
+          <>
+            <article className="names">
+              {dateT.getDate() === day && dateT.getMonth() === month ? (
+                <div>
+                  {" "}
+                  <img src={image}></img>
+                  <h1>{name}</h1>
+                  <h2>{age}</h2>
+                  <img src={image}></img>
+                </div>
+              ) : (
+                ""
+              )}
+            </article>
+          </>
+        );
+      })} */}
 
-    <div>
+      <button
+        className="btn"
+        onClick={() => {
+          setBirth([]);
+        }}
+      >
+        {" "}
+        Clear All{" "}
+      </button>
 
-    <h1>
-    {name}
-    </h1>
-    
-    <h2>
-    {age}
-    </h2>
+    <div className="newField">
+      <input type ="text" placeholder="name"></input>
 
-<img src={image}></img>
+      <input type ="text" placeholder="age"></input>
 
+      <input type ="text" placeholder="birth year Ex: 2020"></input>
 
-    </div>  
+      <input type ="text" placeholder="month Ex: 11"></input>
 
+      <input type ="text" placeholder="day Ex: 29"></input>
 
-: ''}
-  </h2>
+      <input type ="text" placeholder="unique digit key Ex: 23"></input>
 
-    </article>
-})
+      <input type ="text" placeholder="Image URL" ></input>
+
+      <button className="btn">Add birthday to the list</button>
+
+      </div>
+    </>
+  );
 }
 
-<button className='btn' onClick={() => {setBirth([])}}> Clear All </button>
-
-</>
-)
-}
-
-export default DataBack
+export default DataBack;

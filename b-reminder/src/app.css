@@ -2,8 +2,9 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    align-items: center;
+    
 }
-
 .main{
     height: 100vh;
     width: 100%;
@@ -20,26 +21,56 @@
     width: 40vh;
     box-shadow: 0 5px 15px rgba(0,0,0,.4);
     border-radius: .25rem;
-
-
+   
 }
 
-.data h2{
-  font-size: 40px;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 
-.names{
-    margin: 20px;
+
+.birthdays h2{
+    text-align: center;
 }
 
-.names img{
+
+.userDetails{
+    display: flex;
+    column-gap: 15px;;
+    margin-left: 25px;;
+}
+.image img{
     width: 100px;
     height: 100px;
     border-radius: 100%;
+}
+
+.details{
+
+}
+
+.details h1 {
+    color: red;
+}
+
+.details h2 {
+    color: black;
 }
 .btn{
     width: 100%;
     height: 5vh;
    
+    
+}
+.newField{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.newField input{
+    height: 50px;
+    
+}
+
+.newField input:hover{
+    background-color: gainsboro;
     
 }
