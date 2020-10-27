@@ -1,76 +1,96 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    align-items: center;
-    
-}
-.main{
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(49, 22, 206);
-    padding-top: 150px;
-    display: flex;
-    justify-content: center;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
 }
 
-.birthays{
-
-    background-color: white;
-    width: 40vh;
-    box-shadow: 0 5px 15px rgba(0,0,0,.4);
-    border-radius: .25rem;
-   
+:root{
+    --clr-primary-1:#f28ab2;
+}
+.main {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--clr-primary-1);
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
 }
 
-
-
-.birthdays h2{
-    text-align: center;
+.birthdays {
+  background-color: white;
+  width: 40vh;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 0.25rem;
+  text-align: center;
+  
 }
 
-
-.userDetails{
-    display: flex;
-    column-gap: 15px;;
-    margin-left: 25px;;
-}
-.image img{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
+.birthdays h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+    letter-spacing: 2px;
 }
 
-.details{
+.userDetails {
+  display: flex;
+  column-gap: 15px;
+  margin-left: 30%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.image img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
+.details {
 }
 
 .details h1 {
-    color: red;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  letter-spacing: 2px;
 }
 
-.details h2 {
-    color: black;
-}
-.btn{
-    width: 100%;
-    height: 5vh;
-   
-    
-}
-.newField{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.details p {
+  color: black;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  
 
 }
-
-.newField input{
-    height: 50px;
-    
+.btn {
+  width: 100%;
+  height: 5vh;
+  margin-bottom: 50px;
+  background-color: var(--clr-primary-1);
+  border: hidden;
+  color:white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+.newField {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.newField input:hover{
-    background-color: firebrick;
-    
+.newField input {
+  height: 50px;
+}
+
+.newField input:hover {
+  background-color: firebrick;
 }

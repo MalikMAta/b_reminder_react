@@ -7,6 +7,9 @@ function DataBack() {
 
   const dateT = new Date();
 
+
+
+
   return (
     <>
 
@@ -14,6 +17,8 @@ function DataBack() {
     {birth.map((people) => {
         const {name, day, month, age, image, key} = people
 
+
+       
 
         return (
             <>
@@ -24,10 +29,11 @@ function DataBack() {
         <div className="image" alt="" >
          <img src={image}></img>
         </div>
+        
 
         <div className="details">
-        <h1>{name}</h1>
-        <h2>{age}</h2>
+        <h1>{name} </h1>
+        <p>{age} Years</p>
         </div>
         
        </article>
@@ -78,7 +84,7 @@ function DataBack() {
         Clear All{" "}
       </button>
 
-    <div className="newField">
+    {/* <div className="newField">
       <input type ="text" placeholder="name"></input>
 
       <input type ="text" placeholder="age"></input>
@@ -95,7 +101,7 @@ function DataBack() {
 
       <button className="btn">Add birthday to the list</button>
 
-      </div>
+      </div> */}
     </>
   );
 }

@@ -4,11 +4,11 @@ export const birthdays = [
     name: "Mike",
     birthdate: 10 - 25 - 1992,
     month: 9,
-    day: 26,
+    day: 27,
     year: 2020,
     age: 19,
     image:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-3_rxtqvi.jpg",
+      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
   },
 
   {
@@ -32,7 +32,7 @@ export const birthdays = [
     year: 2024,
     age: 25,
     image:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-3_rxtqvi.jpg",
+      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
   },
 
   {

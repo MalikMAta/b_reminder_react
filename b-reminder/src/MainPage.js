@@ -6,14 +6,13 @@ import DataBack from './DataBack'
 function MainPage() {
  
 
-
 return (
 <>
 
 <div className="main">
    
-<section className="birthays">
-    <h2>Birthdays Today</h2>
+<section className="birthdays">
+    <h2>Birthdays Today { document.querySelectorAll('.userDetails').length}</h2>
 <DataBack />
 </section>
 
