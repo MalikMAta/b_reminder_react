@@ -4,75 +4,44 @@ import "./app.css";
 
 function DataBack() {
   const [birth, setBirth] = useState(birthdays);
-
+  //   const [number, setNumber ] = useState(0)
   const dateT = new Date();
 
+  const updateObject = (e) => {
+    e.preventDefault();
 
-
+    setBirth({
+      ...birth,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <>
+      {birth.map((people) => {
+        const { name, day, month, age, image, key } = people;
 
-
-    {birth.map((people) => {
-        const {name, day, month, age, image, key} = people
-
-
-       
-
-        return (
-            <>
-
-        {dateT.getDate() === day && dateT.getMonth() === month ? 
-        
-        <article className="userDetails" key={key}> 
-        <div className="image" alt="" >
-         <img src={image}></img>
-        </div>
-        
-
-        <div className="details">
-        <h1>{name} </h1>
-        <p>{age} Years</p>
-        </div>
-        
-       </article>
-        : ""}
-    
-            
-
-
-        </>
-        )
-
-    })}
-
-
-
-
-
-
-      {/* {birth.map((people) => {
-        const { name, day, month, age, image } = people;
+        const numbers = [];
 
         return (
           <>
-            <article className="names">
-              {dateT.getDate() === day && dateT.getMonth() === month ? (
-                <div>
-                  {" "}
-                  <img src={image}></img>
-                  <h1>{name}</h1>
-                  <h2>{age}</h2>
+            {dateT.getDate() === day && dateT.getMonth() === month ? (
+              <article className="userDetails" key={key}>
+                <div className="image" alt="">
                   <img src={image}></img>
                 </div>
-              ) : (
-                ""
-              )}
-            </article>
+
+                <div className="details">
+                  <h1>{name} </h1>
+                  <p>{age} Years</p>
+                </div>
+              </article>
+            ) : (
+              ""
+            )}
           </>
         );
-      })} */}
+      })}
 
       <button
         className="btn"
@@ -84,24 +53,60 @@ function DataBack() {
         Clear All{" "}
       </button>
 
-    {/* <div className="newField">
-      <input type ="text" placeholder="name"></input>
+      <div className="newField">
+        <form>
+          <input
+            type="text"
+            placeholder="name"
+            name="name"
+            onChange={updateObject}
+          ></input>
 
-      <input type ="text" placeholder="age"></input>
+          <input
+            type="text"
+            placeholder="age"
+            name="age"
+            onChange={updateObject}
+          ></input>
 
-      <input type ="text" placeholder="birth year Ex: 2020"></input>
+          <input
+            type="text"
+            placeholder="birth year Ex: 2020"
+            name="year"
+            onChange={updateObject}
+          ></input>
 
-      <input type ="text" placeholder="month Ex: 11"></input>
+          <input
+            type="text"
+            placeholder="month Ex: 11"
+            name="month"
+            onChange={updateObject}
+          ></input>
 
-      <input type ="text" placeholder="day Ex: 29"></input>
+          <input
+            type="text"
+            placeholder="day Ex: 29"
+            name="day"
+            onChange={updateObject}
+          ></input>
 
-      <input type ="text" placeholder="unique digit key Ex: 23"></input>
+          <input
+            type="text"
+            placeholder="unique digit key Ex: 23"
+            name="key"
+            onChange={updateObject}
+          ></input>
 
-      <input type ="text" placeholder="Image URL" ></input>
+          <input
+            type="text"
+            placeholder="Image URL"
+            name="image"
+            onChange={updateObject}
+          ></input>
 
-      <button className="btn">Add birthday to the list</button>
-
-      </div> */}
+          <button className="btn">Add birthday to the list</button>
+        </form>
+      </div>
     </>
   );
 }
