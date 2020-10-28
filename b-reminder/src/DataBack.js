@@ -1,75 +1,38 @@
 import React, { useState } from "react";
 import { birthdays } from "./DataB";
 import "./app.css";
-import Add from './Add'
+import Add from "./Add";
 
 function DataBack() {
   const [birth, setBirth] = useState(birthdays);
+
   const dateT = new Date();
   return (
     <>
+      {birth.map((people) => {
+        const { name, day, month, age, image, key } = people;
 
-
-    {birth.map((people) => {
-        const {name, day, month, age, image, key} = people
-
-       const numbers = []
-
-        return (
-            <>
-
-        {dateT.getDate() === day && dateT.getMonth() === month ? 
-        
-
-
-        <article className="userDetails" key={key}> 
-        <div className="image" alt="" >
-         <img src={image}></img>
-        </div>
-        
-
-        <div className="details">
-        <h1>{name} </h1>
-        <p>{age} Years</p>
-        </div>
-        
-       </article>
-        : ""}
-    
-            
-
-
-        </>
-        )
-
-    })}
-
-
-
-
-
-
-      {/* {birth.map((people) => {
-        const { name, day, month, age, image } = people;
+        const numbers = [];
 
         return (
           <>
-            <article className="names">
-              {dateT.getDate() === day && dateT.getMonth() === month ? (
-                <div>
-                  {" "}
-                  <img src={image}></img>
-                  <h1>{name}</h1>
-                  <h2>{age}</h2>
+            {dateT.getDate() === day && dateT.getMonth() === month ? (
+              <article className="userDetails" key={key}>
+                <div className="image" alt="">
                   <img src={image}></img>
                 </div>
-              ) : (
-                ""
-              )}
-            </article>
+
+                <div className="details">
+                  <h1>{name} </h1>
+                  <p>{age} Years</p>
+                </div>
+              </article>
+            ) : (
+              ""
+            )}
           </>
         );
-      })} */}
+      })}
 
       <button
         className="btn"
@@ -81,25 +44,7 @@ function DataBack() {
         Clear All{" "}
       </button>
 
-        <Add/>
-    {/* <div className="newField">
-      <input type ="text" placeholder="name"></input>
-
-      <input type ="text" placeholder="age"></input>
-
-      <input type ="text" placeholder="birth year Ex: 2020"></input>
-
-      <input type ="text" placeholder="month Ex: 11"></input>
-
-      <input type ="text" placeholder="day Ex: 29"></input>
-
-      <input type ="text" placeholder="unique digit key Ex: 23"></input>
-
-      <input type ="text" placeholder="Image URL" ></input>
-
-      <button className="btn">Add birthday to the list</button>
-
-      </div> */}
+      <Add />
     </>
   );
 }
